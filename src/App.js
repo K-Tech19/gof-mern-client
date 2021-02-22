@@ -56,7 +56,7 @@ function App() {
   return (
     <div>
       <Navbar handleLogout={handleLogout} isAuth={isAuthenticated} />
-      <div className="container mt-5">
+     
         <Switch>
           <Route path="/signup" component={ Signup } />
           <Route 
@@ -67,7 +67,7 @@ function App() {
           <PrivateRoute path="/profile" component={ Profile } user={currentUser} />
           <Route exact path="/" component={ Welcome } />
         </Switch>
-      </div>
+      
       <Footer />
     </div>
   );

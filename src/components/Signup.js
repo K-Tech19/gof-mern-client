@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import { Redirect } from 'react-router-dom';
+import './Signup.css'
 const REACT_APP_SERVER_URL = process.env.REACT_APP_SERVER_URL;
 
 const Signup = () => {
@@ -38,10 +39,11 @@ const Signup = () => {
 
     if (redirect) return <Redirect to="/login" />
 
-    return (
-        <div className="row mt-4">
+    return (  
+        <div className='signupbody'>
+        
             <div className="col-md-7 offset-md-3">
-                <div className="card card-body">
+                <div class='signup' className="card card-body">
                     <h2 className="py-2">Signup</h2>
                     <form onSubmit={handleSubmit}>
                         <div className="form-group">
@@ -61,6 +63,7 @@ const Signup = () => {
                 </div>
             </div>
         </div>
+       
     );
 
 }
