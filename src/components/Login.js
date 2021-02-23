@@ -3,6 +3,7 @@ import axios from 'axios';
 import jwt_decode from 'jwt-decode';
 import setAuthToken from '../utils/setAuthToken';
 import { Redirect } from 'react-router-dom';
+import './Login.css'
 const REACT_APP_SERVER_URL = process.env.REACT_APP_SERVER_URL;
 
 const Login = (props) => {
@@ -40,7 +41,8 @@ const Login = (props) => {
     if (props.user) return <Redirect to="/profile" user={props.user} />;
 
     return (
-        <div className="row mt-4">
+        <div className='loginbody'>
+        
             <div className="col-md-7 offset-md-3">
                 <div className="card card-body">
                     <h2 className="py-2">Login</h2>
@@ -58,6 +60,7 @@ const Login = (props) => {
                 </div>
             </div>
         </div>
+    
     );
 }
 

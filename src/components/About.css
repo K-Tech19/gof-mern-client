@@ -1,3 +1,25 @@
-body {
-    background-color: blue;
+.aboutbody {
+    background-image: url('https://store-images.s-microsoft.com/image/apps.11539.68843572048501388.669471cb-d7a3-4829-8dd3-971e31f52503.69d25146-7f40-4a48-b3fe-0d5504c21282?mode=scale&q=90&h=1080&w=1920');
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100wv;
+    height: 100vh;
+    
 }
+
+h1 {
+    text-align: center;
+    color: black;
+    background-color: white;
+    margin-bottom: 0px;
+    opacity: 0.7;
+}
+
+p {
+    text-align: center;
+    color: black;
+    background-color: white;
+    margin-top: 0px;
+    opacity: 0.7;
+}
+
