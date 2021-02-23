@@ -10,6 +10,8 @@ import Welcome from './components/Welcome';
 import About from './components/About';
 import Footer from './components/Footer';
 import './App.css';
+import axios from 'axios'
+
 
 const PrivateRoute = ({ component: Component, ...rest }) => {
   const user = localStorage.getItem('jwtToken');
@@ -20,7 +22,12 @@ const PrivateRoute = ({ component: Component, ...rest }) => {
 }
 
 function App() {
-  // set state values
+axios.get('http://localhost:8000/').then(response => {
+  console.log(response)
+}) 
+
+
+  ////////// set state values
   let [currentUser, setCurrentUser] = useState("");
   let [isAuthenticated, setIsAuthenticated] = useState(true);
 
@@ -35,6 +42,7 @@ function App() {
       setIsAuthenticated(true);
     }
   }, []);
+
 
   const nowCurrentUser = (userData) => {
     console.log('nowCurrentUser is working...');
