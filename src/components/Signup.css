@@ -1,4 +1,4 @@
-  .signupbody{
+.signupbody{
     background-image: url('https://cdn.hipwallpaper.com/i/83/50/U1tWJY.jpg');
     background-repeat: no-repeat;
     background-size: cover;
@@ -17,7 +17,6 @@ div.card.card-body {
     background-color: gray;
     width: 500px;
     height: 400px;
-    transform: skew(15deg);
     opacity: 100;
 }
 

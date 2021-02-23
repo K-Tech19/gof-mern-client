@@ -27,24 +27,19 @@ Link: [placeholder.com]
 ### Installation 
 
 1. Fork the repository
-    * click Code and copy HTTPS link
-    * Open terminal and run  `git clone [insert HTTPS link here]` 
+    * click the "Code" button and copy HTTPS link
+    * Open Terminal and run  `git clone [insert HTTPS link here]` 
     * Last change your directory to gof-mern-client `cd gof-mern-client`
 
 2. Install all dependencies by running `npm install`
 
-3. Create a local database to store app models by entering `createdb db_black star`
 
-4. Update the config.json file by including the database of black_star (from step 3) and the current dialect you are using. 
-
-5. Run migration by entering sequelize db:migrate
-
-6. Create a .env file to store all information that needs to be hidden listed below:
+3. Create a .env file to store all information that needs to be hidden listed below:
 
     * PORT=3000
     * SESSION_SECRET='supersecretpassword'
 
-7. Lastly run the server by running `nodemon` in your terminal then open your browers and go to http://localhost:3000.
+4. Lastly run the server by running `nodemon` in your terminal then open your browers and go to http://localhost:3000.
 
 ## Approach:
 
