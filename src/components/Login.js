@@ -42,7 +42,6 @@ const Login = (props) => {
 
     return (
         <div className='loginbody'>
-        
             <div className="col-md-7 offset-md-3">
                 <div className="card card-body">
                     <h2 className="py-2">Login</h2>
