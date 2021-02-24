@@ -5,3 +5,11 @@
     background-color: rgb(41, 243, 41);
     font-family: 'DotGothic16', sans-serif;
 }
+
+.nav-link {
+    color: white;
+}
+
+.nav-link:hover {
+    color: aqua;
+}

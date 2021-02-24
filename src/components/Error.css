@@ -1,0 +1,7 @@
+.error {
+    background-image: url('https://upload.wikimedia.org/wikipedia/en/thumb/4/44/I_am_Error.png/220px-I_am_Error.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: 100vh;
+    width: 100vw;
+}

@@ -9,6 +9,8 @@ import Profile from './components/Profile';
 import Welcome from './components/Welcome';
 import About from './components/About';
 import Footer from './components/Footer';
+import Error from './components/Error'
+import Blog from './components/Blog'
 import './App.css';
 import axios from 'axios'
 
@@ -22,14 +24,14 @@ const PrivateRoute = ({ component: Component, ...rest }) => {
 }
 
 function App() {
-// axios.get('http://localhost:8000/').then(response => {
-//   console.log(response.data)
-// }) 
-// .then(resresponse => {
-//   console.lo
-  
-// })
 
+axios.get('http://localhost:8000/').then(response => {
+  console.log(response)
+}) 
+.then(response => {
+  console.log(response)
+  
+})
 
   ////////// set state values
   let [currentUser, setCurrentUser] = useState("");
@@ -46,7 +48,6 @@ function App() {
       setIsAuthenticated(true);
     }
   }, []);
-
 
   const nowCurrentUser = (userData) => {
     console.log('nowCurrentUser is working...');
@@ -75,12 +76,15 @@ function App() {
             path="/login" 
             render={ (props) => <Login {...props} nowCurrentUser={nowCurrentUser} setIsAuthenticated={setIsAuthenticated} user={currentUser}/>} 
           />
+          <Route path='/error' component={ Error } />
           <Route path="/about" component={ About } />
+
           <PrivateRoute path="/profile" component={ Profile } user={currentUser.id} />
           <Route
               exact path="/" 
               render={ (props ) => <Welcome {...props} user={currentUser.id}  />}
            />
+          <Route exact path="/blog" component={ Blog } user={currentUser}/>
         </Switch>
       
       <Footer />
