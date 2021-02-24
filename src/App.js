@@ -22,9 +22,13 @@ const PrivateRoute = ({ component: Component, ...rest }) => {
 }
 
 function App() {
-axios.get('http://localhost:8000/').then(response => {
-  console.log(response)
-}) 
+// axios.get('http://localhost:8000/').then(response => {
+//   console.log(response.data)
+// }) 
+// .then(resresponse => {
+//   console.lo
+  
+// })
 
 
   ////////// set state values
@@ -58,7 +62,7 @@ axios.get('http://localhost:8000/').then(response => {
     }
   }
 
-  console.log('Current User', currentUser);
+  console.log(currentUser.id + '👿');
   console.log('Authenicated', isAuthenticated);
 
   return (
@@ -72,8 +76,11 @@ axios.get('http://localhost:8000/').then(response => {
             render={ (props) => <Login {...props} nowCurrentUser={nowCurrentUser} setIsAuthenticated={setIsAuthenticated} user={currentUser}/>} 
           />
           <Route path="/about" component={ About } />
-          <PrivateRoute path="/profile" component={ Profile } user={currentUser} />
-          <Route exact path="/" component={ Welcome } />
+          <PrivateRoute path="/profile" component={ Profile } user={currentUser.id} />
+          <Route
+              exact path="/" 
+              render={ (props ) => <Welcome {...props} user={currentUser.id}  />}
+           />
         </Switch>
       
       <Footer />
