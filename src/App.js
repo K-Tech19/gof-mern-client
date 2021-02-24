@@ -9,6 +9,8 @@ import Profile from './components/Profile';
 import Welcome from './components/Welcome';
 import About from './components/About';
 import Footer from './components/Footer';
+import Error from './components/Error'
+import Blog from './components/Blog'
 import './App.css';
 import axios from 'axios'
 
@@ -70,9 +72,11 @@ function App() {
             path="/login" 
             render={ (props) => <Login {...props} nowCurrentUser={nowCurrentUser} setIsAuthenticated={setIsAuthenticated} user={currentUser}/>} 
           />
+          <Route path='/error' component={ Error } />
           <Route path="/about" component={ About } />
           <PrivateRoute path="/profile" component={ Profile } user={currentUser} />
           <Route exact path="/" component={ Welcome } />
+          <Route exact path="/blog" component={ Blog } user={currentUser}/>
         </Switch>
       
       <Footer />
