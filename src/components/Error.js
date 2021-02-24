@@ -6,7 +6,6 @@ const Error = () => {
         <div className='error'>
             <img />
         </div>
-    )
-}
-
+        )
+    }
 export default Error
