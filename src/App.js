@@ -25,9 +25,9 @@ const PrivateRoute = ({ component: Component, ...rest }) => {
 
 function App() {
   
-//   axios.get('http://localhost:8000/').then(request.responseText => ({
-//     console.log(request.responseText)
-// }) 
+  axios.get('http://localhost:8000/').then(response => {
+    console.log(response)
+}) 
 
   ////////// set state values
   let [currentUser, setCurrentUser] = useState("");
