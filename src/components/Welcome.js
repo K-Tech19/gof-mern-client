@@ -4,7 +4,7 @@ import './Welcome.css'
 const Welcome = () => {
     return (
         <div className='welcomebody'>
-           
+            
         </div>
     );
 }

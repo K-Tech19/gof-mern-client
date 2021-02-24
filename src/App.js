@@ -22,10 +22,10 @@ const PrivateRoute = ({ component: Component, ...rest }) => {
 }
 
 function App() {
-axios.get('http://localhost:8000/').then(response => {
-  console.log(response)
+  
+  axios.get('http://localhost:8000/').then(request.responseText => {
+    console.log(request.responseText)
 }) 
-
 
   ////////// set state values
   let [currentUser, setCurrentUser] = useState("");
@@ -42,7 +42,6 @@ axios.get('http://localhost:8000/').then(response => {
       setIsAuthenticated(true);
     }
   }, []);
-
 
   const nowCurrentUser = (userData) => {
     console.log('nowCurrentUser is working...');
