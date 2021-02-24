@@ -73,7 +73,6 @@ axios.get('http://localhost:8000/').then(response => {
   return (
     <div>
       <Navbar handleLogout={handleLogout} isAuth={isAuthenticated} />
-     
         <Switch>
           <Route path="/signup" component={ Signup } />
           <Route 
