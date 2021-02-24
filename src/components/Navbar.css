@@ -3,7 +3,6 @@
     border: 2px solid rgb(41, 243, 41);
     border-radius: 20%;
     background-color: rgb(41, 243, 41);
-    font-family: 'DotGothic16', sans-serif;
 }
 
 .nav-link {
@@ -12,4 +11,8 @@
 
 .nav-link:hover {
     color: aqua;
+}
+
+#gametitle {
+    font-family: 'copperplate', sans-serif;
 }

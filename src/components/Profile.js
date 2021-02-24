@@ -12,11 +12,11 @@ const Profile = (props) => {
 
     const errorDiv = () => {
         return (
-        
+            <form>
             <div className="text-center pt-4">
                 <h3>Please <Link to="/login">login</Link> to view this page</h3>
             </div>
-        
+            </form>
         );
     };
 

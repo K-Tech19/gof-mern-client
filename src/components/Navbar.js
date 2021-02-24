@@ -17,7 +17,7 @@ const Navbar = (props) => {
                             <NavLink className="nav-link" id='aboutbutton'  to="/about">About</NavLink>
                         </li>
                         <li className="nav-item">
-                            <NavLink className="navbar-brand" exact to="/">GAME OVERFLOW</NavLink>
+                            <NavLink id='gametitle' className="navbar-brand" exact to="/">GAME OVERFLOW</NavLink>
                         </li>
                     </ul>
                     {

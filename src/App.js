@@ -31,7 +31,11 @@ axios.get('http://localhost:8000/').then(response => {
 .then(response => {
   console.log(response)
   
-})
+
+  axios.get('http://localhost:8000/').then(response => {
+    console.log(response)
+}) 
+
 
   ////////// set state values
   let [currentUser, setCurrentUser] = useState("");
