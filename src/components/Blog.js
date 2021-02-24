@@ -3,8 +3,8 @@ import './Blog.css'
 
 const Blog = () => {
     return (
-      <div>
-          
+      <div className='blog'>
+          <img  />
       </div>
     )
 }
