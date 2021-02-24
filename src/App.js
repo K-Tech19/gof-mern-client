@@ -24,24 +24,10 @@ const PrivateRoute = ({ component: Component, ...rest }) => {
 }
 
 function App() {
-
-axios.get('http://localhost:8000/').then(response => {
-  console.log(response)
-}) 
-.then(response => {
-  console.log(response)
   
-<<<<<<< HEAD
   axios.get('http://localhost:8000/').then(response => {
     console.log(response)
 }) 
-=======
-
-  axios.get('http://localhost:8000/').then(response => {
-    console.log(response)
-}) 
-
->>>>>>> 547710bd8342b1a7264d93f1c5def5af89c256f3
 
   ////////// set state values
   let [currentUser, setCurrentUser] = useState("");
@@ -73,13 +59,12 @@ axios.get('http://localhost:8000/').then(response => {
     }
   }
 
-  console.log(currentUser.id + '👿');
+  console.log('Current User', currentUser);
   console.log('Authenicated', isAuthenticated);
 
   return (
     <div>
       <Navbar handleLogout={handleLogout} isAuth={isAuthenticated} />
-     
         <Switch>
           <Route path="/signup" component={ Signup } />
           <Route 
@@ -88,12 +73,8 @@ axios.get('http://localhost:8000/').then(response => {
           />
           <Route path='/error' component={ Error } />
           <Route path="/about" component={ About } />
-
-          <PrivateRoute path="/profile" component={ Profile } user={currentUser.id} />
-          <Route
-              exact path="/" 
-              render={ (props ) => <Welcome {...props} user={currentUser.id}  />}
-           />
+          <PrivateRoute path="/profile" component={ Profile } user={currentUser} />
+          <Route exact path="/" component={ Welcome } />
           <Route exact path="/blog" component={ Blog } user={currentUser}/>
         </Switch>
       
