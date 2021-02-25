@@ -29,6 +29,10 @@ axios.get('http://localhost:8000/').then(response => {
   console.log(response)
 }) 
 
+  axios.get('http://localhost:8000/').then(response => {
+    console.log('🤗')
+    console.log(response)
+}) 
 
 
   ////////// set state values
@@ -61,7 +65,9 @@ axios.get('http://localhost:8000/').then(response => {
     }
   }
 
-  console.log(currentUser.id + '👿');
+
+  console.log('🥶'+currentUser.id);
+
   console.log('Authenicated', isAuthenticated);
 
   return (
@@ -75,6 +81,8 @@ axios.get('http://localhost:8000/').then(response => {
           />
           <Route path='/error' component={ Error } />
           <Route path="/about" component={ About } />
+
+
           <PrivateRoute path="/profile" component={ Profile } user={currentUser.id} />
           <Route
               exact path="/" 

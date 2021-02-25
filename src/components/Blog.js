@@ -7,7 +7,7 @@ export default function Blog(){
         <div className='blog'>
             <img />
             <div className='col-md-7 offset-md-3'>
-                <div id='blogpost'className='card card-body'>
+                <div className='card card-body'>
                 <h2 id='title' className="py-2">Blog Post</h2>
                     <form>
                 <div className="form-group">
