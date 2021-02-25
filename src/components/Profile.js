@@ -19,7 +19,8 @@ const Profile = (props) => {
                 <h2 id='profiletitle' className="py-2">Blog Post</h2>
                     <form method='POST' action='http://localhost:8000/blog/createblog'>
                 <div className="form-group">
-                    <input type='hidden' name={props.user} />
+                    <input type='hidden' name='author' value={props.user.id} />
+                    <input type='hidden' name='email' value={props.user.email} />
                     <label id='blogtitle'>Blog Title</label>
                         <input type="text" className='form-control' name='title'/>
                     </div>
