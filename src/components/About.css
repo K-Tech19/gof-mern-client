@@ -12,7 +12,6 @@ h1 {
     color: black;
     background-color: white;
     margin-bottom: 0px;
-    opacity: 0.7;
 }
 
 p {
@@ -24,4 +23,5 @@ p {
 
 #about {
     border-radius: 15%;
+    margin-top: 10px;
 }

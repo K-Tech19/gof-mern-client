@@ -28,13 +28,7 @@ function App() {
 axios.get('http://localhost:8000/').then(response => {
   console.log(response)
 }) 
-.then(response => {
-  console.log(response)
-  
 
-  axios.get('http://localhost:8000/').then(response => {
-    console.log(response)
-}) 
 
 
   ////////// set state values
@@ -81,7 +75,6 @@ axios.get('http://localhost:8000/').then(response => {
           />
           <Route path='/error' component={ Error } />
           <Route path="/about" component={ About } />
-
           <PrivateRoute path="/profile" component={ Profile } user={currentUser.id} />
           <Route
               exact path="/" 
@@ -89,7 +82,6 @@ axios.get('http://localhost:8000/').then(response => {
            />
           <Route exact path="/blog" component={ Blog } user={currentUser}/>
         </Switch>
-      
       <Footer />
     </div>
   );
