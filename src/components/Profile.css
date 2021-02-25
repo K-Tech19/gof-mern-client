@@ -5,3 +5,18 @@ div.profile {
     height: 100vh;
     width: 100vw;
 }
+
+#blogtitle {
+    text-align: center;
+    font-size: x-large;
+}
+
+#blogcomments {
+    text-align: center;
+    font-size: x-large;
+}
+
+#profilebody {
+    height: 600px;
+}
+

@@ -83,7 +83,7 @@ function App() {
           <PrivateRoute path="/profile" component={ Profile } user={currentUser.id} />
           <Route
               exact path="/" 
-              render={ (props ) => <Welcome {...props} user={currentUser.id}  />}
+              render={ () => <Welcome user={currentUser.id}  />}
           />
           <Route exact path="/blog" component={ Blog } user={currentUser}/>
         </Switch>
