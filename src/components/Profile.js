@@ -19,6 +19,7 @@ const Profile = (props) => {
                     <div className='form-group'>
                 <label id='bloginfo'>Blog Info</label>
                 <textarea className='form-control' />
+                <button type="submit" className="btn btn-primary float-right">Submit</button>
             </div>
         </form>
         </div> 
