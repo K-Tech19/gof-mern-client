@@ -7,12 +7,11 @@ div.profile {
 }
 
 #blogtitle {
-    text-align: center;
     font-size: x-large;
+    text-align: right;
 }
 
 #blogcomments {
-    text-align: center;
     font-size: x-large;
 }
 
