@@ -26,7 +26,7 @@ const PrivateRoute = ({ component: Component, ...rest }) => {
 function App() {
 
 
-  axios.get('http://localhost:8000/').then(response => {
+  axios.get(process.env.REACT_APP_SERVER_URL).then(response => {
     console.log('🤗')
     console.log(response)
 }) 
