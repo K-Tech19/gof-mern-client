@@ -1,20 +1,19 @@
 import React from 'react';
 import './Welcome.css'
 import axios from 'axios'
-import { useState } from 'react';
+// import { useState } from 'react';
 
 const Welcome = (props) => {
-    let [user, setUser] = useState(props.user)
-
-    console.log(user)
-    axios.get(`http://localhost:8000/blog/seeblogs/${user}`)
+    console.log('this ran ')
+    console.log(props.user)
+    axios.get(`http://localhost:8000/blog/seeblogs/${props.user}`)
     .then(response => {
         console.log(response.data)
     })
     return (
         <div className='welcomebody'>
-            <p><strong>{user}</strong> </p>
-            <p><h3>something</h3>  </p> 
+            <p><strong>{props.user}</strong> </p>
+            <h3>something</h3> 
         </div>
     );
 }
