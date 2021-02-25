@@ -4,3 +4,19 @@
     height: 100vh;
     width: 100vw;
 }
+
+#userblogfeed{
+    height: 600px;
+    width: 360px;
+    position: sticky;
+    left: 100px;
+}
+
+#latestblogfeed {
+    height: 600px;
+    width: 360px;
+    position: relative;
+    left: 600px;
+    bottom: 77px;
+    opacity: 0.9;
+}
