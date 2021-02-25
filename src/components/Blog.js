@@ -12,9 +12,9 @@ export default function Blog(){
     <form>
         <div id='blogtitle' className="form-group">
             <label id='blogtitle'>Title</label>
-             <input type='text' className='form-control' />
+             <h1>THE TITLE GOES HERE</h1>
                 <label id='blogcontent'>Content</label>
-                    <input type='text' className='form-control' />
+                    <h5>BLOG CONTENT GOES HERE</h5>
                     </div>
                 <div id='blogcomments'className='form-group'>
             <label>Comment</label>
