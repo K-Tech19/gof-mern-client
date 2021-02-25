@@ -24,11 +24,19 @@ const PrivateRoute = ({ component: Component, ...rest }) => {
 }
 
 function App() {
+
+axios.get('http://localhost:8000/').then(response => {
+  console.log(response)
+}) 
+.then(response => {
+  console.log(response)
   
+
   axios.get('http://localhost:8000/').then(response => {
     console.log('🤗')
     console.log(response)
 }) 
+
 
   ////////// set state values
   let [currentUser, setCurrentUser] = useState("");
@@ -60,7 +68,9 @@ function App() {
     }
   }
 
+
   console.log('🥶'+currentUser.id);
+
   console.log('Authenicated', isAuthenticated);
 
   return (
@@ -74,10 +84,12 @@ function App() {
           />
           <Route path='/error' component={ Error } />
           <Route path="/about" component={ About } />
-          <PrivateRoute path="/profile" component={ Profile } user={currentUser} />
+
+
+          <PrivateRoute path="/profile" component={ Profile } user={currentUser.id} />
           <Route
-            exact path="/"  
-            render={ ()=> <Welcome user={currentUser.id} />}
+              exact path="/" 
+              render={ (props ) => <Welcome {...props} user={currentUser.id}  />}
            />
           <Route exact path="/blog" component={ Blog } user={currentUser}/>
         </Switch>
