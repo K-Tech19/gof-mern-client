@@ -3,6 +3,12 @@ import { Link } from 'react-router-dom';
 import './Profile.css'
 
 const Profile = (props) => {
+
+    // axios.get('http://localhost:8000/').then(response => {
+    //     console.log('🤗')
+    //     console.log(response)
+    // }) 
+    console.log(props.user)
     console.log(props);
     const userData = props.user ? 
     (<div className='profile'>
@@ -11,14 +17,15 @@ const Profile = (props) => {
             <div className='col-md-7 offset-md-3'>
                 <div className='card card-body' id='profilebody'>
                 <h2 id='profiletitle' className="py-2">Blog Post</h2>
-                    <form>
+                    <form method='POST' action='http://localhost:8000/blog/createblog'>
                 <div className="form-group">
+                    <input type='hidden' name={props.user} />
                     <label id='blogtitle'>Blog Title</label>
-                        <input type="text" className='form-control' />
+                        <input type="text" className='form-control' name='title'/>
                     </div>
                     <div className='form-group'>
                 <label id='bloginfo'>Blog Info</label>
-                <textarea className='form-control' />
+                <textarea className='form-control' name='content' />
                 <button type="submit" className="btn btn-primary float-right">Submit</button>
             </div>
         </form>

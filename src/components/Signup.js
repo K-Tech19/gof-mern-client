@@ -8,7 +8,7 @@ const Signup = () => {
     let [email, setEmail] = useState('')
     let [password, setPassword] = useState('');
     let [confirmPassword, setConfirmPassword] = useState('');
-    let [redirect, setRedirect] = useState(false);
+    let [redirect, setRedirect] = useState(true);
 
     const handleEmail = (e) => {
         setEmail(e.target.value);

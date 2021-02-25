@@ -3,6 +3,11 @@ import './Blog.css'
 
 export default function Blog(){
 
+    // axios.get('http://localhost:8000/').then(response => {
+    //     console.log('🤗')
+    //     console.log(response)
+    // }) 
+
     return (
         <div className='blog'>
             <img />

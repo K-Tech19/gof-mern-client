@@ -63,7 +63,7 @@ function App() {
   }
 
 
-  console.log('🥶'+currentUser.id);
+  console.log(currentUser);
 
   console.log('Authenicated', isAuthenticated);
 
@@ -80,7 +80,7 @@ function App() {
           <Route path="/about" component={ About } />
 
 
-          <PrivateRoute path="/profile" component={ Profile } user={currentUser.id} />
+          <PrivateRoute path="/profile" component={ Profile } user={currentUser.email} />
           <Route
               exact path="/" 
               render={ () => <Welcome user={currentUser.id}  />}
