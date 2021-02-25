@@ -25,9 +25,6 @@ const PrivateRoute = ({ component: Component, ...rest }) => {
 
 function App() {
 
-axios.get('http://localhost:8000/').then(response => {
-  console.log(response)
-}) 
 
   axios.get('http://localhost:8000/').then(response => {
     console.log('🤗')
@@ -87,7 +84,7 @@ axios.get('http://localhost:8000/').then(response => {
           <Route
               exact path="/" 
               render={ (props ) => <Welcome {...props} user={currentUser.id}  />}
-           />
+          />
           <Route exact path="/blog" component={ Blog } user={currentUser}/>
         </Switch>
       <Footer />
