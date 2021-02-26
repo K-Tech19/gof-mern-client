@@ -28,7 +28,7 @@ const Signup = () => {
         if (password === confirmPassword) {
             const newUser = { email, password }
 
-            axios.post(`${REACT_APP_SERVER_URL}/api/signup`, newUser)
+            axios.post(`${REACT_APP_SERVER_URL}/api/login`, newUser)
             .then(response => {
                 console.log(response);
                 setRedirect(true);
@@ -37,7 +37,7 @@ const Signup = () => {
         }
     }
 
-    if (redirect) return <Redirect to="/login" />
+    if (redirect) return <Redirect to="/signup" />
 
     return (  
         <div className='signupbody'>
