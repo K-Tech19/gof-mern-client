@@ -5,15 +5,31 @@ import axios from 'axios'
 
 const Welcome = (props) => {
 
-    let [games, setGames] = useState({})
+    const [games, setGames] = useState({})
+    const [blogs, setBlogs] = useState('')
+
 
     console.log('this ran ')
     console.log(props.user)
-    axios.get(`http://localhost:8000/blog/seeblogs/${props.user}`)
-    .then(response => {
-        console.log(response.data)
-    })
 
+    useEffect(()=> {
+        axios.get(`http://localhost:8000/blog/allBlogs`)
+        .then(response => {
+            console.log(response.data)
+            setBlogs(response.data)
+        })
+    }, [])
+    let blogList ;
+    console.log('🥶',blogs[0])
+    if(blogs.length > 0) {
+        blogList = blogs.map((blog, index) => {
+           return (
+               <div key={index}>
+                   <p><a href={`/blog/${blog._id}`} >{blog.title}</a></p>
+               </div>
+           )
+       })
+    }
     useEffect(() =>{
         axios.get('https://api.rawg.io/api/games').then(response =>{
             // console.log(response.data.results)
@@ -24,6 +40,7 @@ const Welcome = (props) => {
     let gameData ;
     if(games.length > 0){
         gameData = games.map((game, index)=>{
+
             return(
                 <div key={index}>
                     <h1>{game.name}</h1>
@@ -52,7 +69,8 @@ const Welcome = (props) => {
                                     <p></p>
                                 </div>
                                 <form>       
-                                <p><a href={`http://localhost:8000/blog/seeblogs/${props.user}`} ></a></p>
+
+                              {blogList}
                             </form>
                         </div> 
                     </div>  

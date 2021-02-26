@@ -25,11 +25,10 @@ const PrivateRoute = ({ component: Component, ...rest }) => {
 
 function App() {
   
-
   
   axios.get(process.env.REACT_APP_SERVER_URL).then(response => {
-    console.log('🤗')
-    console.log(response)
+    // console.log('🤗')
+    // console.log(response)
   }) 
   
   
@@ -67,7 +66,10 @@ function App() {
 
 
   console.log(currentUser);
-
+  axios.get(`http://localhost:8000/blog/allBlogs`)
+  .then(response => {
+      console.log(response.data)
+  })
   console.log('Authenicated', isAuthenticated);
 
   return (
@@ -94,7 +96,10 @@ function App() {
               render={ () => <Welcome user={currentUser}  />}
 
           />
-          <Route exact path="/blog" component={ Blog } user={currentUser}/>
+          <Route 
+          exact path="/blog/:id"  
+          render= {() => <Blog user={currentUser} /> }
+          />
         </Switch>
       <Footer />
     </div>
