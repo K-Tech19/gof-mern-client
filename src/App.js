@@ -24,18 +24,21 @@ const PrivateRoute = ({ component: Component, ...rest }) => {
 }
 
 function App() {
+  
 
-
-  axios.get('http://localhost:8000/').then(response => {
+  
+  axios.get(process.env.REACT_APP_SERVER_URL).then(response => {
     console.log('🤗')
     console.log(response)
-}) 
-
-
+  }) 
+  
+  
   ////////// set state values
   let [currentUser, setCurrentUser] = useState("");
   let [isAuthenticated, setIsAuthenticated] = useState(true);
-
+  
+  
+  
   useEffect(() => {
     let token;
     if (!localStorage.getItem('jwtToken')) {
@@ -87,7 +90,9 @@ function App() {
           />
           <Route
               exact path="/" 
+
               render={ () => <Welcome user={currentUser}  />}
+
           />
           <Route exact path="/blog" component={ Blog } user={currentUser}/>
         </Switch>

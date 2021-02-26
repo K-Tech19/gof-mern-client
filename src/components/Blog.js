@@ -17,7 +17,7 @@ export default function Blog(){
     <form>
         <div id='blogtitle' className="form-group">
             <label id='blogtitle'>Title</label>
-             <h1>THE TITLE GOES HERE</h1>
+                <h1>THE TITLE GOES HERE</h1>
                 <label id='blogcontent'>Content</label>
                     <h5>BLOG CONTENT GOES HERE</h5>
                     </div>
