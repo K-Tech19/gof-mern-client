@@ -1,13 +1,14 @@
 import React, { useEffect, useState } from 'react'
 import './Blog.css'
 import axios from 'axios'
-import { useParams } from 'react-router-dom'
+import { Link, Redirect, useParams } from 'react-router-dom'
 
 
 export default function Blog(props) {
     const [particularBlog, setParticularBlog] = useState('')
     const { id } = useParams()
     const [newComment, setNewComment] = useState('')
+    const [redirect, setRedirect] = useState(false)
     // console.log(newComment)
     console.log(props.user)
     let comment;
@@ -29,10 +30,10 @@ export default function Blog(props) {
         comment = <p>no comments yet</p>
     }
     // no comment is not yet rendering
-
+    console.log(redirect)
     const handleBlogDelete = () => {
         // let blogId = match.params.id
-        let blogId;
+        let blogId = id;
         let token = localStorage.getItem('authToken')
         fetch(`${process.env.REACT_APP_SERVER_URL}/blog/deleteblog/${blogId}`, {
             headers: {
@@ -44,12 +45,13 @@ export default function Blog(props) {
             .then(response => {
                 // response.status === 204 ? {} : response.json()
                 console.log('blog was deleted')
+                setRedirect(true)
             })
             .catch(err => {
                 console.log(err)
             })
     }
-
+    if (redirect) return < Redirect to={'/'} />
     const addComment = (e) => {
         e.preventDefault()
         axios.post('http://localhost:8000/blog/createcomment', {
@@ -58,9 +60,9 @@ export default function Blog(props) {
             id: id
 
         })
-        .then((response)=>{
-            setParticularBlog(response.data)
-        })
+            .then((response) => {
+                setParticularBlog(response.data)
+            })
     }
     return (
         <div className='blog'>
@@ -78,11 +80,12 @@ export default function Blog(props) {
                         <div id='blogcomments' className='form-group'>
                             <label>Comment</label>
                             {comment}
-                            <form method='POST'  onSubmit={addComment}>
+                            <form method='POST' onSubmit={addComment}>
                                 <textarea onChange={e => setNewComment(e.target.value)} className='form-control' />
                                 <button type="submit" className="btn btn-primary float-right">Submit</button>
-                                <button onClick={handleBlogDelete} type="submit" className="btn btn-primary float-right">Delete</button>
                             </form>
+                            <br></br>
+                           <Link to='/'> <button onClick={handleBlogDelete}  type="submit" className="btn btn-primary float-right">Delete Blog Post</button> </Link>
                         </div>
                     </form>
                 </div>
