@@ -43,8 +43,6 @@ const Welcome = (props) => {
                             <h2 id='title' className="py-2">Games</h2>
                                 <form>       
                                     <div>
-                                    
-
                                 </div>
                             </form>
                             <div className='col-md-7'>
@@ -54,7 +52,7 @@ const Welcome = (props) => {
                                     <p></p>
                                 </div>
                                 <form>       
-                                <p><a href={`http://localhost:8000/blog/seeblogs/${props.user}`} ></a>What do you want form me</p>
+                                <p><a href={`http://localhost:8000/blog/seeblogs/${props.user}`} ></a></p>
                             </form>
                         </div> 
                     </div>  
