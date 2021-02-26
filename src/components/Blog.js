@@ -1,13 +1,31 @@
 import React, {useEffect, useState } from 'react'
 import './Blog.css'
 
-export default function Blog(){
+
+export default function Blog({match}){
 
     // axios.get('http://localhost:8000/').then(response => {
     //     console.log('🤗')
     //     console.log(response)
     // }) 
-
+    const handleBlogDelete = () => {
+        let blogId = match.params.id
+        let token = localStorage.getItem('authToken')
+        fetch(`${process.env.REACT_APP_SERVER_URL}/blog/deleteblog/${blogId}`,{
+            headers: {
+                'Content-type' : 'application/json',
+                'Authorization' : `Bearer ${token}`
+            },
+            method:'DELETE'
+        } )
+        .then(response =>{
+            // response.status === 204 ? {} : response.json()
+            console.log('blog was deleted')
+        })
+        .catch(err => {
+            console.log(err)
+        })
+    }
     return (
         <div className='blog'>
             <img />
@@ -25,6 +43,7 @@ export default function Blog(){
             <label>Comment</label>
         <textarea className='form-control' />
     <button type="submit" className="btn btn-primary float-right">Submit</button>
+    <button onClick={handleBlogDelete} type="submit" className="btn btn-primary float-right">Delete</button>
 </div>
 </form>
 </div>

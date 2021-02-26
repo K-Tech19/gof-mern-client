@@ -21,7 +21,7 @@ const Welcome = (props) => {
         })
     }, [])
     console.log(games)
-    let gameData;
+    let gameData ;
     if(games.length > 0){
         gameData = games.map((game, index)=>{
             return(
@@ -40,15 +40,19 @@ const Welcome = (props) => {
                 <img />
                     <div className='col-md-7'>
                         <div id='userblogfeed'className='card card-body'>
-                            <h2 id='title' className="py-2">Your Blogs</h2>
+                            <h2 id='title' className="py-2">Games</h2>
                                 <form>       
                                     <div>
-                                        {gameData}
+                                    
+
                                 </div>
                             </form>
                             <div className='col-md-7'>
                         <div id='latestblogfeed'className='card card-body'>
                             <h2 id='title' className="py-2">New Blogs</h2>
+                                <div>
+                                    <p></p>
+                                </div>
                                 <form>       
                                 <p><a href={`http://localhost:8000/blog/seeblogs/${props.user}`} ></a>What do you want form me</p>
                             </form>
