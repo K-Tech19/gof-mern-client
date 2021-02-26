@@ -60,8 +60,6 @@ const Welcome = (props) => {
                             <h2 id='title' className="py-2">Games</h2>
                                 <form>       
                                     <div>
-                                    
-
                                 </div>
                             </form>
                             <div className='col-md-7'>
@@ -71,6 +69,7 @@ const Welcome = (props) => {
                                     <p></p>
                                 </div>
                                 <form>       
+
                               {blogList}
                             </form>
                         </div> 
