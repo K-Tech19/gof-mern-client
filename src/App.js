@@ -87,7 +87,7 @@ function App() {
           />
           <Route
               exact path="/" 
-              render={ () => <Welcome user={currentUser.id}  />}
+              render={ () => <Welcome user={currentUser}  />}
           />
           <Route exact path="/blog" component={ Blog } user={currentUser}/>
         </Switch>
