@@ -8,7 +8,7 @@ const Signup = () => {
     let [email, setEmail] = useState('')
     let [password, setPassword] = useState('');
     let [confirmPassword, setConfirmPassword] = useState('');
-    let [redirect, setRedirect] = useState(true);
+    let [redirect, setRedirect] = useState(false);
 
     const handleEmail = (e) => {
         setEmail(e.target.value);
@@ -28,7 +28,7 @@ const Signup = () => {
         if (password === confirmPassword) {
             const newUser = { email, password }
 
-            axios.post(`${REACT_APP_SERVER_URL}/api/login`, newUser)
+            axios.post(`${REACT_APP_SERVER_URL}/api/signup`, newUser)
             .then(response => {
                 console.log(response);
                 setRedirect(true);
@@ -37,10 +37,10 @@ const Signup = () => {
         }
     }
 
-    if (redirect) return <Redirect to="/signup" />
+    if (redirect) return <Redirect to="/login" />
 
     return (  
-        <div className='signupbody'>
+        <div className='signupbody' id='bodysignup'>
         
             <div className="col-md-7 offset-md-3">
                 <div class='signup' className="card card-body">

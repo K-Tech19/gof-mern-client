@@ -76,7 +76,7 @@ function App() {
     <div>
       <Navbar handleLogout={handleLogout} isAuth={isAuthenticated} />
         <Switch>
-          <Route path="/signup" component={ Signup } />
+          <Route path="/signup" component={ Signup }/>
           <Route 
             path="/login" 
             render={ (props) => <Login {...props} nowCurrentUser={nowCurrentUser} 
