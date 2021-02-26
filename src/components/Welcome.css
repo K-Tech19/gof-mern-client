@@ -10,6 +10,7 @@
     width: 360px;
     position: sticky;
     left: 100px;
+    text-align: center;
 }
 
 #latestblogfeed {
@@ -19,4 +20,5 @@
     left: 600px;
     bottom: 77px;
     opacity: 0.9;
+    text-align: center;
 }

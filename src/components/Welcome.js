@@ -13,6 +13,7 @@ const Welcome = (props) => {
     .then(response => {
         console.log(response.data)
     })
+
     useEffect(() =>{
         axios.get('https://api.rawg.io/api/games').then(response =>{
             // console.log(response.data.results)
@@ -49,8 +50,7 @@ const Welcome = (props) => {
                         <div id='latestblogfeed'className='card card-body'>
                             <h2 id='title' className="py-2">New Blogs</h2>
                                 <form>       
-                                    <div>
-                                </div>
+                                <p><a href={`http://localhost:8000/blog/seeblogs/${props.user}`} ></a>What do you want form me</p>
                             </form>
                         </div> 
                     </div>  
