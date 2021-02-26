@@ -16,7 +16,7 @@ const Welcome = (props) => {
         axios.get(`http://localhost:8000/blog/allBlogs`)
         .then(response => {
             console.log(response.data)
-            setBlogs(response.data)
+            setBlogs(response.data.reverse())
         })
     }, [])
     let blogList ;
